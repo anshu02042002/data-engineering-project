@@ -1,94 +1,98 @@
-\# End-to-End Data Engineering Pipeline using Databricks
+\# End-to-End Data Engineering Pipeline | Databricks Lakehouse Project
 
 
 
-\## Project Overview
+&#x20;Overview
 
 
 
-This project demonstrates a complete end-to-end data engineering pipeline built using \*\*Databricks, Apache Spark, PySpark, SQL, and Delta Lake\*\*.
+This project demonstrates the development of an end-to-end data engineering pipeline using \*\*Databricks, Apache Spark, PySpark, SQL, and Delta Lake\*\*.
 
 
 
-The project follows the \*\*Medallion Architecture (Bronze → Silver → Gold)\*\* to ingest raw data, perform data cleaning and transformations, implement data quality checks, and create business-ready analytical datasets.
+The pipeline follows the \*\*Medallion Architecture (Bronze → Silver → Gold)\*\* to process customer, product, and order data. Raw data is ingested into the Bronze layer, transformed and cleaned in the Silver layer, and converted into analytics-ready datasets in the Gold layer.
 
 
 
-Synthetic datasets for customers, products, and orders were generated and processed through multiple pipeline stages.
 
 
 
-\---
+
+&#x20;Architecture
 
 
 
-\# Architecture
+
+
+&#x20;                Synthetic Data
+
+&#x20;                      |
+
+&#x20;                      |
+
+&#x20;                 Faker Generator
+
+&#x20;                      |
+
+&#x20;                      v
+
+&#x20;               Bronze Layer
+
+&#x20;             Raw Delta Tables
 
 
 
-```
+&#x20;       customers\_raw
 
-&#x20;                   Synthetic Data
+&#x20;       products\_raw
 
-&#x20;                        |
-
-&#x20;                        |
-
-&#x20;                   Faker Dataset
-
-&#x20;                        |
-
-&#x20;                        v
-
-&#x20;                Bronze Layer
-
-&#x20;             (Raw Delta Tables)
-
-&#x20;                        |
-
-&#x20;       --------------------------------
-
-&#x20;       |              |               |
-
-&#x20;customers\_raw   products\_raw    orders\_raw
-
-&#x20;                        |
-
-&#x20;                        v
-
-&#x20;                Silver Layer
-
-&#x20;         (Cleaned \& Transformed Data)
-
-&#x20;                        |
-
-&#x20;       --------------------------------
-
-&#x20;       |              |               |
-
-customers\_clean products\_clean orders\_clean
-
-&#x20;                        |
-
-&#x20;                        v
-
-&#x20;                 Gold Layer
-
-&#x20;           (Business Analytics Tables)
-
-&#x20;                        |
-
-&#x20;       --------------------------------
-
-&#x20;       |              |               |
-
-customer\_sales\_summary  daily\_sales\_summary  product\_performance
-
-```
+&#x20;       orders\_raw
 
 
 
-\---
+&#x20;                      |
+
+&#x20;                      v
+
+
+
+&#x20;               Silver Layer
+
+&#x20;         Cleaned \& Transformed Data
+
+
+
+&#x20;       customers\_clean
+
+&#x20;       products\_clean
+
+&#x20;       orders\_clean
+
+
+
+&#x20;                      |
+
+&#x20;                      v
+
+
+
+&#x20;                Gold Layer
+
+&#x20;           Business Analytics
+
+
+
+&#x20;       customer\_sales\_summary
+
+&#x20;       daily\_sales\_summary
+
+&#x20;       product\_performance
+
+
+
+
+
+
 
 
 
@@ -96,105 +100,37 @@ customer\_sales\_summary  daily\_sales\_summary  product\_performance
 
 
 
-| Technology   | Usage                              |
+| Technology   | Purpose                        |
 
-| ------------ | ---------------------------------- |
+| ------------ | ------------------------------ |
 
-| Databricks   | Data processing platform           |
+| Databricks   | Data engineering platform      |
 
-| Apache Spark | Distributed data processing        |
+| Apache Spark | Distributed data processing    |
 
-| PySpark      | Data transformation                |
+| PySpark      | ETL transformations            |
 
-| Delta Lake   | Storage and transaction management |
+| Delta Lake   | Reliable data storage          |
 
-| SQL          | Data analysis and querying         |
+| SQL          | Data querying and analytics    |
 
-| Python       | Data generation and processing     |
+| Python       | Data generation and processing |
 
-| Faker        | Synthetic data creation            |
+| Faker        | Synthetic data creation        |
 
-| Git \& GitHub | Version control                    |
+| Git/GitHub   | Version control                |
 
 
 
-\---
 
 
 
-\# Dataset Description
 
+&#x20;Data Pipeline Workflow
 
 
-The project uses three major datasets:
 
-
-
-\## Customers Dataset
-
-
-
-Contains customer information:
-
-
-
-\* Customer ID
-
-\* Customer details
-
-\* Customer attributes
-
-
-
-\## Products Dataset
-
-
-
-Contains product information:
-
-
-
-\* Product ID
-
-\* Product name
-
-\* Category
-
-\* Price
-
-
-
-\## Orders Dataset
-
-
-
-Contains transaction information:
-
-
-
-\* Order ID
-
-\* Customer ID
-
-\* Product ID
-
-\* Order date
-
-\* Quantity
-
-\* Sales amount
-
-
-
-\---
-
-
-
-\# Medallion Architecture Implementation
-
-
-
-\## Bronze Layer - Raw Data Ingestion
+1\. Bronze Layer - Data Ingestion
 
 
 
@@ -202,65 +138,55 @@ The Bronze layer stores raw source data as Delta tables.
 
 
 
-\### Bronze Tables
+Tables:
 
 
 
-```
+\* `customers\_raw`
 
-customers\_raw
+\* `products\_raw`
 
-products\_raw
-
-orders\_raw
-
-```
+\* `orders\_raw`
 
 
 
-Operations performed:
+Implemented:
 
 
 
-\* Data ingestion
-
-\* Schema creation
-
-\* Raw data storage
+\* Raw data ingestion
 
 \* Delta table creation
 
-
-
-\---
-
-
-
-\# Silver Layer - Data Cleaning and Transformation
+\* Schema definition
 
 
 
-The Silver layer contains cleaned and standardized datasets.
 
 
 
-\### Silver Tables
+
+&#x20;2. Silver Layer - Data Transformation
 
 
 
-```
-
-customers\_clean
-
-products\_clean
-
-orders\_clean
-
-```
+The Silver layer performs data cleaning and transformation.
 
 
 
-Transformations performed:
+Tables:
+
+
+
+\* `customers\_clean`
+
+\* `products\_clean`
+
+\* `orders\_clean`
+
+
+
+Implemented:
 
 
 
@@ -270,9 +196,9 @@ Transformations performed:
 
 \* Null handling
 
-\* Data standardization
+\* Data validation
 
-\* Business rule validations
+\* Standardization
 
 
 
@@ -280,27 +206,23 @@ Transformations performed:
 
 
 
-\# Gold Layer - Analytics Layer
+&#x20;3. Gold Layer - Analytics
 
 
 
-The Gold layer contains aggregated tables designed for business reporting.
+The Gold layer contains business-ready datasets.
 
 
 
-\### Gold Tables
+Tables:
 
 
 
-\## Customer Sales Summary
+&#x20;Customer Sales Summary
 
 
 
-```
-
-customer\_sales\_summary
-
-```
+`customer\_sales\_summary`
 
 
 
@@ -312,59 +234,43 @@ Provides customer-level metrics:
 
 \* Total sales
 
-\* Customer purchase behavior
+\* Customer purchase insights
 
 
 
-\---
+&#x20;Daily Sales Summary
 
 
 
-\## Daily Sales Summary
+`daily\_sales\_summary`
 
 
 
-```
-
-daily\_sales\_summary
-
-```
+Provides:
 
 
 
-Provides daily business insights:
+\* Daily order trends
 
-
-
-\* Daily orders
-
-\* Revenue trends
+\* Revenue analysis
 
 \* Sales performance
 
 
 
-\---
+&#x20;Product Performance
 
 
 
-\## Product Performance
+`product\_performance`
 
 
 
-```
-
-product\_performance
-
-```
+Provides:
 
 
 
-Provides product analytics:
-
-
-
-\* Product sales
+\* Product sales analysis
 
 \* Revenue contribution
 
@@ -372,19 +278,11 @@ Provides product analytics:
 
 
 
-\---
-
 
 
 \# Databricks Notebooks
 
 
-
-The project contains five notebooks:
-
-
-
-```
 
 notebooks/
 
@@ -400,55 +298,15 @@ notebooks/
 
 05\_incremental\_load.ipynb
 
-```
 
 
 
-\---
 
 
 
-\# Pipeline Workflow
 
 
-
-```
-
-01 Bronze Ingestion
-
-&#x20;       |
-
-&#x20;       v
-
-02 Silver Transformation
-
-&#x20;       |
-
-&#x20;       v
-
-03 Gold Transformation
-
-&#x20;       |
-
-&#x20;       v
-
-04 Data Quality Checks
-
-&#x20;       |
-
-&#x20;       v
-
-05 Incremental Load Processing
-
-```
-
-
-
-\---
-
-
-
-\# Data Engineering Features Implemented
+\# Engineering Concepts Implemented
 
 
 
@@ -458,11 +316,11 @@ notebooks/
 
 ✅ PySpark ETL Pipeline
 
-✅ Data Transformation Framework
-
-✅ Data Quality Validation
+✅ Data Quality Checks
 
 ✅ Incremental Data Processing
+
+✅ Data Transformation Framework
 
 ✅ Schema Management
 
@@ -470,45 +328,31 @@ notebooks/
 
 
 
-\---
 
 
 
-\# Incremental Load Implementation
+
+&#x20;Project Outcome
 
 
 
-The pipeline supports incremental data processing to avoid reprocessing complete datasets.
+Built a production-style data pipeline capable of transforming raw transactional data into analytics-ready datasets using modern data engineering practices.
 
 
 
-Implemented concepts:
 
 
 
-\* New data identification
 
-\* Incremental ingestion
-
-\* Efficient processing
-
-\* Delta Lake based updates
+&#x20;Author
 
 
 
-\---
+Anshu Gupta
 
 
 
-\# Author
-
-
-
-\*\*Anshu Gupta\*\*
-
-
-
-Data Engineering Portfolio Project
+Data Engineering Project
 
 
 
@@ -526,7 +370,7 @@ Skills:
 
 \* Delta Lake
 
-\* Data Pipeline Development
+\* Data Engineering
 
 
 
