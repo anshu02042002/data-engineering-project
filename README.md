@@ -22,7 +22,7 @@ The pipeline follows the \*\*Medallion Architecture (Bronze → Silver → Gold)
 
 
 
-```
+
 
 &#x20;                Synthetic Data
 
@@ -88,7 +88,7 @@ The pipeline follows the \*\*Medallion Architecture (Bronze → Silver → Gold)
 
 &#x20;       product\_performance
 
-```
+
 
 
 
