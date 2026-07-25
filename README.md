@@ -2,7 +2,7 @@
 
 
 
-&#x20;Overview
+\## Overview
 
 
 
@@ -14,15 +14,15 @@ The pipeline follows the \*\*Medallion Architecture (Bronze → Silver → Gold)
 
 
 
+\---
 
 
 
-
-&#x20;Architecture
-
+\# Architecture
 
 
 
+```
 
 &#x20;                Synthetic Data
 
@@ -88,11 +88,11 @@ The pipeline follows the \*\*Medallion Architecture (Bronze → Silver → Gold)
 
 &#x20;       product\_performance
 
+```
 
 
 
-
-
+\---
 
 
 
@@ -122,15 +122,15 @@ The pipeline follows the \*\*Medallion Architecture (Bronze → Silver → Gold)
 
 
 
+\---
 
 
 
-
-&#x20;Data Pipeline Workflow
-
+\# Data Pipeline Workflow
 
 
-1\. Bronze Layer - Data Ingestion
+
+\## 1. Bronze Layer - Data Ingestion
 
 
 
@@ -162,11 +162,11 @@ Implemented:
 
 
 
+\---
 
 
 
-
-&#x20;2. Silver Layer - Data Transformation
+\## 2. Silver Layer - Data Transformation
 
 
 
@@ -206,7 +206,7 @@ Implemented:
 
 
 
-&#x20;3. Gold Layer - Analytics
+\## 3. Gold Layer - Analytics
 
 
 
@@ -218,7 +218,7 @@ Tables:
 
 
 
-&#x20;Customer Sales Summary
+\### Customer Sales Summary
 
 
 
@@ -238,7 +238,7 @@ Provides customer-level metrics:
 
 
 
-&#x20;Daily Sales Summary
+\### Daily Sales Summary
 
 
 
@@ -258,7 +258,7 @@ Provides:
 
 
 
-&#x20;Product Performance
+\### Product Performance
 
 
 
@@ -278,11 +278,15 @@ Provides:
 
 
 
+\---
+
 
 
 \# Databricks Notebooks
 
 
+
+```
 
 notebooks/
 
@@ -298,11 +302,11 @@ notebooks/
 
 05\_incremental\_load.ipynb
 
+```
 
 
 
-
-
+\---
 
 
 
@@ -328,11 +332,11 @@ notebooks/
 
 
 
+\---
 
 
 
-
-&#x20;Project Outcome
+\# Project Outcome
 
 
 
@@ -340,15 +344,15 @@ Built a production-style data pipeline capable of transforming raw transactional
 
 
 
+\---
 
 
 
-
-&#x20;Author
-
+\# Author
 
 
-Anshu Gupta
+
+\*\*Anshu Gupta\*\*
 
 
 
