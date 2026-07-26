@@ -193,7 +193,7 @@ Aspiring Data Engineer passionate about building scalable data pipelines using D
 ### Connect with Me
 
 - **GitHub:** https://github.com/anshu02042002
-- **LinkedIn:** https://www.linkedin.com/in/anshu-gupta-64b58b341/
+- **LinkedIn:** https://www.linkedin.com/in/anshu-gupta-de
 
 ### Skills
 
