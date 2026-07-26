@@ -16,33 +16,7 @@ The implementation demonstrates modern data engineering concepts including ETL p
 
 # 🏗️ Architecture
 
-```
-                Faker (Synthetic Data)
-                        │
-                        ▼
-                Bronze Layer (Raw)
-        customers_raw
-        products_raw
-        orders_raw
-                        │
-                        ▼
-            Silver Layer (Cleaned)
-        customers_clean
-        products_clean
-        orders_clean
-                        │
-                        ▼
-          Gold Layer (Business Metrics)
-     customer_sales_summary
-     daily_sales_summary
-     product_performance
-                        │
-                        ▼
-          Databricks Workflow Jobs
-                        │
-                        ▼
-          Apache Airflow Orchestration
-```
+![Architecture](images/data-engineering-project-architecture.png)
 
 ---
 
