@@ -186,17 +186,22 @@ Suggested screenshots:
 
 # 👨‍💻 Author
 
-**Anshu Gupta**
+## Anshu Gupta
 
-Aspiring Data Engineer
+Aspiring Data Engineer passionate about building scalable data pipelines using Databricks, Apache Spark, Delta Lake, and Apache Airflow.
+
+### Connect with Me
+
+- **GitHub:** https://github.com/anshu02042002
+- **LinkedIn:** https://www.linkedin.com/in/anshu-gupta-64b58b341/
 
 ### Skills
 
-* Python
-* SQL
-* Apache Spark
-* PySpark
-* Databricks
-* Delta Lake
-* Apache Airflow
-* Git & GitHub
+- Python
+- SQL
+- Apache Spark
+- PySpark
+- Databricks
+- Delta Lake
+- Apache Airflow
+- Git & GitHub
