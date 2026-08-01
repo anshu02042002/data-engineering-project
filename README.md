@@ -157,33 +157,6 @@ Workflow:
 
 ---
 
-# 🚀 Future Enhancements
-
-* AWS S3 Integration
-* dbt Transformations
-* Power BI Dashboard
-* CI/CD Pipeline using GitHub Actions
-* Data Observability
-* Unit & Integration Testing
-
----
-
-# 📸 Project Screenshots
-
-Add screenshots in the `images/` folder.
-
-Suggested screenshots:
-
-* Airflow DAG
-* Successful Airflow Run
-* Databricks Workflow
-* Bronze Tables
-* Silver Tables
-* Gold Tables
-* Query Results
-
----
-
 # 👨‍💻 Author
 
 ## Anshu Gupta
